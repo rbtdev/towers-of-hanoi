@@ -1,0 +1,91 @@
+<html>
+
+<head>
+    <style>
+        #content {
+            text-align: center;
+        }
+
+        #pegs {
+            margin: 0 auto;
+            position: relative;
+            margin-top: 200px;
+            height: 300px;
+            width: 1280px;
+            text-align: center;
+            border-top-left-radius: 5px;
+            border-top-right-radius: 5px;
+        }
+
+        #speed {
+            position: relative;
+            display: inline-block;
+            width: 400px;
+            top: 5px;
+        }
+
+        #disk-count {
+            display: inline-block;
+            width: 50px
+        }
+
+        .peg {
+            position: relative;
+            display: inline-block;
+            height: 100%;
+            width: 20px;
+            background-color: gray;
+            border-radius: 3px;
+            margin-left: 200px;
+            margin-right: 200px;
+        }
+
+        .base {
+            margin: 0 auto;
+            position: relative;
+            top: 0px;
+            width: 1261px;
+            height: 40px;
+            background-color: gray;
+            border-radius: 3px;
+        }
+
+        .disks {
+            position: absolute;
+            top: 0;
+        }
+
+        .disk {
+            position: absolute;
+            background-color: black;
+            border-radius: 10px;
+        }
+    </style>
+</head>
+
+<body>
+    <input id='disk-count' placeholder="Number of disks" value="5" /> disks
+    <div>
+        <button id='start'>Start</button>
+        <button id='stop'>Stop</button>
+    </div>
+    <div>
+        <span>Move speed:</span>
+        <input type="range" min="1" max="200" value="1" class="slider" id="speed">
+    </div>
+    <div>Moves: <span id='moves-made'>0</span> out of <span id='moves-total'>0</span> (<span
+            id='moves-percent'>0</span>%) Mins remaining: <span id='time-remaining'></span></div>
+
+    <div id='content'>
+        <div id='pegs'>
+            <div class='peg' id='peg-a'></div>
+            <div class='peg' id='peg-b'></div>
+            <div class='peg' id='peg-c'></div>
+            <div id='disks' class='disks'></div>
+        </div>
+        <div class='base'></div>
+    </div>
+</body>
+<script src='./index.js'></script>
+
+</html>
