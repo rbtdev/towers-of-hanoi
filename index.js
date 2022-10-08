@@ -3,6 +3,9 @@ const diskTop = peg => {
 }
 const setup = (diskCount, home) => {
     movesMade = 0;
+    movesTotal = Math.pow(2, parseInt(diskInput.value, 10)) - 1;
+    moveTotalDiv.innerHTML = movesTotal;
+    movesMadeDiv.innerHTML = 0;
     pegsDiv = document.getElementById('pegs');
     DISK_HEIGHT = Math.min(MAX_DISK_HEIGHT, (pegsDiv.offsetHeight - (diskCount * DISK_GAP)) / (diskCount + 1));
     // get pegs display info
@@ -123,7 +126,7 @@ let diskInput = document.getElementById('disk-count');
 let start = document.getElementById('start');
 let stopButton = document.getElementById('stop');
 let speedSlider = document.getElementById('speed');
-let moveTotal = document.getElementById('moves-total');
+let moveTotalDiv = document.getElementById('moves-total');
 let movesMadeDiv = document.getElementById('moves-made');
 let movesPercentDiv = document.getElementById('moves-percent');
 let timeRemainingDiv = document.getElementById('time-remaining');
@@ -133,7 +136,7 @@ let startTime = 0;
 let speed = parseInt(speedSlider.value, 10);
 let diskCount = parseInt(diskInput.value, 10);
 movesTotal = Math.pow(2, parseInt(diskInput.value, 10)) - 1;
-moveTotal.innerHTML = movesTotal;
+moveTotalDiv.innerHTML = movesTotal;
 
 setup(diskCount, 'a');
 // UI event handlers
